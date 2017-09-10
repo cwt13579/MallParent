@@ -1,0 +1,49 @@
+1.打开命令终端，cd 【MallParent的项目根下】
+2.输入以下执行指令【win和linux不一样，注意斜杆】
+3.安装好以下4个包，则可以对所有的MAVEN的项目进行update project处理。
+
+
+
+alisoft-xplatform-asf-cache-2.5.1.jar
+win指令:
+mvn install:install-file -DgroupId=com.alisoft -DartifactId=alisoft-xplatform-asf-cache -Dversion=2.5.1 -Dpackaging=jar -Dfile=priLibs\alisoft-xplatform-asf-cache-2.5.1.jar
+
+linux/mac指令:
+mvn install:install-file -DgroupId=com.alisoft -DartifactId=alisoft-xplatform-asf-cache -Dversion=2.5.1 -Dpackaging=jar -Dfile=priLibs/alisoft-xplatform-asf-cache-2.5.1.jar
+
+---------------------------------------------------------
+esecurity-1.02.jar
+win指令:
+mvn install:install-file -DgroupId=com.zjrcu -DartifactId=esecurity -Dversion=1.02 -Dpackaging=jar -Dfile=priLibs\esecurity-1.02.jar
+
+linux/mac指令:
+mvn install:install-file -DgroupId=com.zjrcu -DartifactId=esecurity -Dversion=1.02 -Dpackaging=jar -Dfile=priLibs/esecurity-1.02.jar
+---------------------------------------------------------
+iec-core2.5.jar
+win指令:
+mvn install:install-file -DgroupId=com.berchina -DartifactId=iec-core -Dversion=2.5 -Dpackaging=jar -Dfile=priLibs\iec-core2.5.jar
+
+linux/mac指令:
+mvn install:install-file -DgroupId=com.berchina -DartifactId=iec-core -Dversion=2.5 -Dpackaging=jar -Dfile=priLibs/iec-core2.5.jar
+---------------------------------------------------------
+java_memcached-release_2.6.6.jar
+win指令:
+mvn install:install-file -DgroupId=com.danga -DartifactId=java_memcached -Dversion=release_2.6.6 -Dpackaging=jar -Dfile=priLibs\java_memcached-release_2.6.6.jar
+
+linux/mac指令:
+mvn install:install-file -DgroupId=com.danga -DartifactId=java_memcached -Dversion=release_2.6.6 -Dpackaging=jar -Dfile=priLibs/java_memcached-release_2.6.6.jar
+---------------------------------------------------------
+
+java_memcached-release_2.6.6.jar
+
+mvn install:install-file -DgroupId=com.oracle -DartifactId=ojdbc14 -Dversion=10.2.0.4.0 -Dpackaging=jar -Dfile=priLibs/ojdbc6.jar
+---------------------------------------------------------
+
+
+mvn install:install-file -DgroupId=com.isprint -DartifactId=am -Dversion=1.0 -Dpackaging=jar -Dfile=priLibs\am.jar
+mvn install:install-file -DgroupId=com.isprint -DartifactId=am5-saml -Dversion=1.0 -Dpackaging=jar -Dfile=priLibs\am5-saml.jar
+mvn install:install-file -DgroupId=com.isprint -DartifactId=am-saml-efix -Dversion=1.0 -Dpackaging=jar -Dfile=priLibs\am-saml-efix.jar
+
+mvn install:install-file -DgroupId=com.ber -DartifactId=iucp -Dversion=1.0.1 -Dpackaging=jar -Dfile=priLibs\iucp-1.0.1.jar
+
+
