@@ -1,0 +1,7 @@
+com\cm\app\module\demo\Provider.class
+com\cm\app\module\demo\Consumer.class
+com\cm\app\App.class
+com\cm\app\module\demo\DemoServiceImpl.class
+com\cm\app\module\demo\User.class
+com\cm\app\module\user\UserFacade.class
+com\cm\app\module\demo\DemoService.class

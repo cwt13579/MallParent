@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo
+       http://code.alibabatech.com/schema/dubbo/dubbo.xsd">      
+		
+    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方-->
+	<dubbo:application name="MallAppConsumer" />     
+	<!-- 使用multicast广播注册中心暴露发现服务地址 
+	<dubbo:registry address="multicast://224.5.6.7:1234" />  -->
+	
+	<!-- 客户端属性配-->
+	<dubbo:consumer  timeout="50000" retries="2" /> <!-- 原来为5000 -->  
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"  register="true"/>
+	
+    <!-- 声明暴露的服务端-->
+	<dubbo:protocol name="dubbo" port="20888" />
+<!-- 	<dubbo:protocol name="dubbo" serialization="kryo" optimizer="com.berchina.common.SerializationOptimizerImpl"/> -->
+	<!-- 配置远程服务，带注册中心-->
+	<!-- Admin_Facade
+	<dubbo:reference id="ADMIN_FACADE" interface="com.iec.core.app.middleware.dubbo.service.IService" group="ADMIN_FACADE"
+		version="1.0" check="false"/>-->
+	 
+	<!-- 直连方式，只用于测试设定dubbo:registry 中register="fase" -->
+	<dubbo:reference id="iDubboCommonService_order" interface="com.berchina.distribute.frame.base.IDubboCommonService" group="iDubboCommonService_order"
+		version="1.0" url="dubbo://localhost:20888/com.berchina.distribute.frame.base.IDubboCommonService"/>
+
+	<dubbo:reference id="USER_FACADE" interface="com.iec.core.app.middleware.dubbo.service.IService" group="USER_FACADE"
+		version="1.0" url="dubbo://localhost:20888/com.iec.core.app.middleware.dubbo.service.IService"/>
+</beans>

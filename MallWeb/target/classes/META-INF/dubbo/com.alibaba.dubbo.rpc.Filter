@@ -1,0 +1,1 @@
+hystrix=com.berchina.distribute.hystrix.HystrixFilter
