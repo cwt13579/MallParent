@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>平安金融商城</title>
+
+</head>
+
+    <div class="main">
+    	<div class="affirmBox">
+            <div class="riskCon">
+
+                 #foreach($doc in $doclist)
+	               <div>
+	               <b>
+	               &nbsp;$velocityCount :控制器名：${doc.controllerName}<br>
+	               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;路径：$!{doc.controllerPath}<br>
+	               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;类名：$!{doc.className}</b></div>
+	              <br>
+	               #foreach($mdoc in $doc.methodList)
+	               <div>&nbsp;&nbsp;&nbsp; $velocityCount 、$!{mdoc.path} #if("${mdoc.desc}"!="")($!{mdoc.desc})#end</div>  
+	                <div>
+	                	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${mdoc.methodName}(#foreach($par in $mdoc.paraList)${par}#if($velocityCount<$mdoc.paraList.size()),#end#end)
+	                 </div>
+	                 <br>
+	                #end
+	                <br>
+	                
+	                
+   				 #end
+            </div>
+           
+           
+        </div>
+    </div>
+   
+</body>
+</html>
+

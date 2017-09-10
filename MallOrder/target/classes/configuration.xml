@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="VARCHAR" />
+	</settings>
+    <typeAliases>
+    	 <!-- 分页对象，必须保留-->
+    	 <typeAlias alias="page" type="com.berchina.common.Page"/>
+    	 <!-- adminUserTest -->
+         
+    	  <typeAlias alias="order" type="com.berchina.vo.OrderVo"/>
+    	  <typeAlias alias="ordergoods" type="com.berchina.vo.OrderGoodsVo"/>
+    	  <typeAlias alias="shop" type="com.berchina.vo.ShopVo"/>
+    	  <typeAlias alias="goods" type="com.berchina.vo.GoodsVo"/>
+    	  <typeAlias alias="member" type="com.berchina.vo.MemberVo"/>
+ </typeAliases>   	 
+	<!-- 注册拦截器-->
+	<plugins>
+		<plugin interceptor="com.cm.app.common.page.PageInterceptor">
+			<property name="dataBaseType" value="mysql" />
+		</plugin>
+	</plugins>
+	<!-- 注册 ibaste 配置文件 -->
+	<mappers>
+	</mappers>
+	
+</configuration>
